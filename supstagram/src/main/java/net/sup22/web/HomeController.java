@@ -1,14 +1,14 @@
-package net.sup22.domain;
+package net.sup22.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class HomeController {
 	
-	@GetMapping("")
+	@GetMapping("/intro")
 	public String Myself() {
 				
 		return "intro";
