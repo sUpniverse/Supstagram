@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/qna")
-public class QuestionController {
+@RequestMapping("/article")
+public class ArticleController {
 	
 	@GetMapping("")
 	public String Qna() {
-		return "/qna/board";
+		return "/article/board";
 	}
 }
