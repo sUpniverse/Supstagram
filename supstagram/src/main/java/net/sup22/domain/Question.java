@@ -1,5 +1,5 @@
 package net.sup22.domain;
 
-public class Question {
-
+public class Question{
+	
 }
