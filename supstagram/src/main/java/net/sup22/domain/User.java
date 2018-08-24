@@ -57,9 +57,9 @@ public class User {
 				+ password + "]";
 	}	
 	
-	public void update(String password, String name, String email) {
-		this.password = password;
-		this.name = name;
-		this.email = email;
+	public void update(User user) {
+		this.password = user.password;
+		this.name = user.name;
+		this.email = user.email;
 	}
 }

@@ -4,8 +4,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.sup22.domain.User;
@@ -52,6 +55,21 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("user");
+		return "redirect:/";
+	}
+	
+	@GetMapping("/{id}/form")
+	public String update_form(@PathVariable Long id, Model model, HttpSession session) {
+		model.addAttribute("user", userRepositroy.findById(id).get());
+		
+		return "/user/updateform";
+	}
+	
+	@PostMapping("/{id}")
+	public String update(@PathVariable Long id, User updateUser) {
+		User user = userRepositroy.findById(id).get();
+		user.update(updateUser);
+		
 		return "redirect:/";
 	}
 	
