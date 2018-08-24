@@ -3,13 +3,14 @@ package net.sup22.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(nullable=false, length=20)
@@ -55,4 +56,10 @@ public class User {
 		return "User [id=" + id + ", userId=" + userId + ", email=" + email + ", name=" + name + ", password="
 				+ password + "]";
 	}	
+	
+	public void update(String password, String name, String email) {
+		this.password = password;
+		this.name = name;
+		this.email = email;
+	}
 }

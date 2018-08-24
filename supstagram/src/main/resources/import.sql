@@ -1,0 +1,1 @@
+INSERT INTO USER (ID,USER_ID, PASSWORD, NAME, EMAIL) values (1,'kms2234','1234','sup2','kms2234@hanmail.net');
