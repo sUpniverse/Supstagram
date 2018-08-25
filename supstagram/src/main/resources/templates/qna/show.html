@@ -18,14 +18,13 @@
 			</thead>
 			<tbody>
 				<tr th:each="question : ${questions}">
-					<td th:text="${question.id}">
-					<td th:text="${question.title}">
-					<td th:text="${question.writer.name}">
-					<td th:text="${question.createDate}">										
+					<td th:text="${question.id}"></td>
+					<td th:text="${question.writer}"></td>
+					<td th:text="${question.id}"></td>
+					<td th:text="${question.id}"></td>					
 				</tr>
 			</tbody>
 		</table>
-		<a href="/qna/form" class="btn btn-primary">글쓰기</a>
 	</div>
 </body>	
 </html>
