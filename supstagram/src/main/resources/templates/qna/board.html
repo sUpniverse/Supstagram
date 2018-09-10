@@ -19,7 +19,7 @@
 			<tbody>
 				<tr th:each="question : ${questions}">
 					<td th:text="${question.id}">
-					<td th:text="${question.title}">
+					<td><a th:text="${question.title}" th:href="@{'/qna/'+${question.id}}"></a></td>
 					<td th:text="${question.writer.name}">
 					<td th:text="${question.createDate}">										
 				</tr>
